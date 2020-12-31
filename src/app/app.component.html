@@ -1,7 +1,19 @@
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <router-outlet></router-outlet>
+      <app-add-meeting *ngIf="loadedPage === 'add'" ></app-add-meeting>
+      <app-edit-meeting *ngIf="loadedPage === 'edit'"></app-edit-meeting>
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <app-list-meeting (selectedPage)="onNavigate($event)"></app-list-meeting>
+    </div>
+    <div class="col-md-6">
+      <app-details-meeting></app-details-meeting>
     </div>
   </div>
 </div>
+
