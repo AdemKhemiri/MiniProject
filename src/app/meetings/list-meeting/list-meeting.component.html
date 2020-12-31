@@ -1,0 +1,25 @@
+<div class="constainer "*ngFor="let meet of meetings; let i=index">
+    <div class="row">
+        <div 
+        class="col-md-12"
+        
+        >
+            <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"> {{ meet.titre }} </h5>
+                    <p class="card-text">Lieu: {{ meet.lieu }} </p>
+                    <button 
+                        class="btn btn-success m"
+                        (click)="onShowDetails(i)"
+                    >Details</button>
+                    <button class="btn btn-primary m">Editer</button>
+                    <button 
+                        class="btn btn-danger m"
+                        (click)="onDeleteMeeting(i)"    
+                    >Supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
