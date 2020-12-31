@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Meeting } from '../Model/Meeting.model';
 import { MeetingService } from '../Model/MeetingService.service';
 
@@ -15,18 +15,19 @@ export class EditMeetingComponent implements OnInit {
   @ViewChild('dateD') date_deb:ElementRef;
   @ViewChild('dateF') date_fin:ElementRef;
 
-  meet: Meeting;
+  @Input() meetToEdit: Meeting;
   newMeet: Meeting;
 
+  id_E : number;
   constructor(private meetingService: MeetingService) {
     
    }
 
   ngOnInit(): void {
-    
-    this.meetingService.selectedMeeting.subscribe(
-      (meet:Meeting) => {this.meet = meet;}
-    );
+    // this.meetingService.selectedMeeting.subscribe(
+    //   (meet:Meeting) => {this.meet = meet;}
+    // );
+    // this.id_E =  this.meet.id;
   }
   
   onEditList() {

@@ -15,6 +15,7 @@ export class ListMeetingComponent implements OnInit {
 
   @Output() selectedPage = new EventEmitter<string>();
 
+  @Output() selectedMeeting = new EventEmitter<Meeting>();
   ngOnInit(): void {
 
     this.meetings = this.meetingService.getMeetings();
@@ -33,6 +34,6 @@ export class ListMeetingComponent implements OnInit {
     
   }
   onEditList(i: number) {
-    
+    this.selectedMeeting.emit(this.meetingService.getMeeting(i));
   }
 }

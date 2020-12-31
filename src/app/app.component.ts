@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Meeting } from './Model/Meeting.model';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,14 @@ export class AppComponent implements OnInit{
   loadedPage = '';
   interval:any;
 
+  @Input() meet: Meeting;
   ngOnInit(): void {
+    
   }
   
   onNavigate(page:string) {
     
     this.loadedPage = page;
   }
+  
 }
