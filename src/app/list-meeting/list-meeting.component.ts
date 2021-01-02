@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, DoCheck, EventEmitter, OnInit, Output } from '@angular/core';
 import { Meeting } from '../Model/Meeting.model';
 import { MeetingService } from '../Model/MeetingService.service';
 
@@ -7,18 +7,22 @@ import { MeetingService } from '../Model/MeetingService.service';
   templateUrl: './list-meeting.component.html',
   styleUrls: ['./list-meeting.component.css']
 })
-export class ListMeetingComponent implements OnInit {
-
-
-  meetings: Meeting[];
-  constructor(private meetingService: MeetingService) { }
+export class ListMeetingComponent implements OnInit, DoCheck {
 
   @Output() selectedPage = new EventEmitter<string>();
 
   @Output() selectedMeeting = new EventEmitter<Meeting>();
+
+  meetings: Meeting[];
+  constructor(private meetingService: MeetingService) { }
+
+  
+  ngDoCheck(): void {
+    this.meetings = this.meetingService.getMeetings();
+  }
   ngOnInit(): void {
 
-    this.meetings = this.meetingService.getMeetings();
+    
   }
   onShowDetails(i:number) {
 

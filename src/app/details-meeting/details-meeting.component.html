@@ -1,29 +1,29 @@
 <br>
-<div class="container">
+<div class="container" *ngIf="selectedMeeting">
 
     <div class="row">
         <div class="col-xs-12">
             <img src="" alt="">
         </div>
     </div>
-    <div class="row">
+    <div class="row" >
         <div class="col-xs-12">
             <h1> {{ selectedMeeting?.titre }} </h1>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <H3> {{ selectedMeeting?.lieu }} </H3>
+            <h3>Lieu: {{ selectedMeeting?.lieu }} </h3>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            {{ selectedMeeting?.date_deb }}
+            <h4>Date du debut: {{ selectedMeeting?.date_deb }} </h4>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            {{ selectedMeeting?.date_fin }}
+            <h4>Date du fin: {{ selectedMeeting?.date_fin }} </h4>
         </div>
     </div>
 </div>

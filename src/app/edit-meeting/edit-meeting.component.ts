@@ -18,7 +18,9 @@ export class EditMeetingComponent implements OnInit {
   @Input() meetToEdit: Meeting;
   newMeet: Meeting;
 
-  id_E : number;
+
+  dateDeb : string;
+  dateFin : string;
   constructor(private meetingService: MeetingService) {
     
    }
@@ -27,17 +29,20 @@ export class EditMeetingComponent implements OnInit {
     // this.meetingService.selectedMeeting.subscribe(
     //   (meet:Meeting) => {this.meet = meet;}
     // );
-    // this.id_E =  this.meet.id;
+
+    
+
   }
   
   onEditList() {
-    this.newMeet = this.meetingService.createMeeting(
-      this.id.nativeElement.value, 
-      this.titre.nativeElement.value, 
-      this.lieu.nativeElement.value, 
-      new Date(), new Date()
-    );
-    this.meetingService.addMeeting(this.newMeet);
+
+    this.meetToEdit.id = this.id.nativeElement.value;
+    this.meetToEdit.titre = this.titre.nativeElement.value; 
+    this.meetToEdit.lieu = this.lieu.nativeElement.value;
+    this.meetToEdit.date_deb = new Date(this.date_deb.nativeElement.value);
+    this.meetToEdit.date_fin = new Date(this.date_fin.nativeElement.value);
+    
+
   }
   
 }

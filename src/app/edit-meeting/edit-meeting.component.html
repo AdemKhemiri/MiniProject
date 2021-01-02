@@ -11,7 +11,7 @@
                 <!-- Meeting ID -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form1Example1">ID du reunion</label>
-                    <input type="text" #id [(ngModel)]="meetToEdit.id" [ngModelOptions]="{standalone: true}" class="form-control" />
+                    <input type="text" #id [value]="meetToEdit.id" class="form-control" />
                 </div>
                 <!-- TITRE -->
                 <div class="form-outline mb-4">
@@ -27,13 +27,13 @@
                 <!-- date debut -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form1Example2">Date de debut</label>
-                    <input type="Date" #dateD [value]="meetToEdit?.date_deb" class="form-control" />
+                    <input type="Date" #dateD [value]="" class="form-control" />
                 </div>
                 
                 <!-- date Fin -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form1Example2">Date de fin</label>
-                    <input type="Date" #dateF [value]="meetToEdit?.date_fin" class="form-control" />
+                    <input type="Date" #dateF [value]="dateFin" class="form-control" />
                 </div>
                 
 

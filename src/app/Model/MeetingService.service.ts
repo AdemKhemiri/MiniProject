@@ -1,11 +1,11 @@
 import { EventEmitter, Injectable } from "@angular/core";
 import { Meeting } from "./Meeting.model";
 
-// @Injectable()
+@Injectable()
 export class MeetingService {
 
     selectedMeeting = new EventEmitter<Meeting>();
-    meetings : Meeting[];
+    private meetings : Meeting[];
 
     constructor () {
         this.meetings = [
@@ -23,7 +23,7 @@ export class MeetingService {
         return new Meeting (id, titre, lieu, date_deb, date_fin);
     }
     getMeetings() {
-        return this.meetings;
+        return this.meetings.slice();
     }
     getMeeting(indice: number) {
         return this.meetings[indice];
