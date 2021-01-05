@@ -16,33 +16,34 @@ export class EditMeetingComponent implements OnInit {
   @ViewChild('dateF') date_fin:ElementRef;
 
   @Input() meetToEdit: Meeting;
+   
+  @Input() meetingIndex: number;
   newMeet: Meeting;
 
 
-  dateDeb : string;
+  dateDeb : Date;
   dateFin : string;
   constructor(private meetingService: MeetingService) {
     
    }
 
   ngOnInit(): void {
-    // this.meetingService.selectedMeeting.subscribe(
-    //   (meet:Meeting) => {this.meet = meet;}
-    // );
+    this.meetToEdit = this.meetingService.getMeeting(this.meetingIndex);
 
     
-
   }
   
   onEditList() {
-
-    this.meetToEdit.id = this.id.nativeElement.value;
-    this.meetToEdit.titre = this.titre.nativeElement.value; 
-    this.meetToEdit.lieu = this.lieu.nativeElement.value;
-    this.meetToEdit.date_deb = new Date(this.date_deb.nativeElement.value);
-    this.meetToEdit.date_fin = new Date(this.date_fin.nativeElement.value);
+    this.newMeet = new Meeting(
+      this.id.nativeElement.value,
+      this.titre.nativeElement.value,
+      this.lieu.nativeElement.value,
+      new Date(this.date_deb.nativeElement.value),
+      new Date(this.date_fin.nativeElement.value)
+    );
+     
+    this.meetingService.editMeeting(this.meetingIndex, this.newMeet);
     
-
   }
   
 }

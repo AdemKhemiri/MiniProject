@@ -31,6 +31,13 @@ export class MeetingService {
     addMeeting(meeting: Meeting) {
         this.meetings.push(meeting);
     }
+    editMeeting(i:number, meeting: Meeting) {
+        this.meetings[i].id = meeting.id;
+        this.meetings[i].titre = meeting.titre;
+        this.meetings[i].lieu = meeting.lieu;
+        this.meetings[i].date_deb = meeting.date_deb;
+        this.meetings[i].date_fin = meeting.date_fin;
+    }
     deleteMeeting(indice: number) {
         this.meetings.splice(indice ,1);
     }

@@ -11,7 +11,8 @@ export class AppComponent implements OnInit{
   loadedPage = '';
   interval:any;
 
-  @Input() meet: Meeting;
+  @Input() meetIndex: number;
+  
   ngOnInit(): void {
     
   }

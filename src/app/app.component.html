@@ -4,7 +4,7 @@
     <div class="col-md-12">
       <app-add-meeting *ngIf="loadedPage === 'add'" ></app-add-meeting>
       
-      <app-edit-meeting *ngIf="loadedPage === 'edit'"  [meetToEdit]="meet"></app-edit-meeting>
+      <app-edit-meeting *ngIf="loadedPage === 'edit'"  [meetingIndex]="meetIndex"></app-edit-meeting>
       
     </div>
   </div>
@@ -12,7 +12,7 @@
     <div class="col-md-6">
       <app-list-meeting 
         (selectedPage)="onNavigate($event)" 
-        (selectedMeeting)="meet = $event"
+        (selectedMeeting)="meetIndex = $event"
       ></app-list-meeting>
     </div>
     <div class="col-md-6">

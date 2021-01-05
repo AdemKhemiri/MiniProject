@@ -8,37 +8,34 @@
         <div class="col-md-6">
             <form>
                 
-                <!-- Meeting ID -->
+            <!-- Meeting ID -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form1Example1">ID du reunion</label>
                     <input type="text" #id [value]="meetToEdit.id" class="form-control" />
                 </div>
-                <!-- TITRE -->
+            <!-- TITRE -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form1Example1">Titre du reunion</label>
                     <input type="text" #titre [value]="meetToEdit.titre" class="form-control" />
                 </div>
-                <!-- LIEU -->
+            <!-- LIEU -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form1Example1">Lieu du reunion</label>
                     <input type="text" #lieu [value]="meetToEdit?.lieu" class="form-control" />
                 </div>
             
-                <!-- date debut -->
+            <!-- date debut -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form1Example2">Date de debut</label>
-                    <input type="Date" #dateD [value]="" class="form-control" />
+                    <input type="Date" #dateD [value]="meetToEdit?.date_deb" class="form-control" />
                 </div>
                 
-                <!-- date Fin -->
+            <!-- date Fin -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form1Example2">Date de fin</label>
-                    <input type="Date" #dateF [value]="dateFin" class="form-control" />
+                    <input type="Date" #dateF [value]="meetToEdit?.date_fin" class="form-control" />
                 </div>
                 
-
-
-
             <!-- Submit button -->
                 <button 
                     type="button" 

@@ -11,7 +11,7 @@ export class ListMeetingComponent implements OnInit, DoCheck {
 
   @Output() selectedPage = new EventEmitter<string>();
 
-  @Output() selectedMeeting = new EventEmitter<Meeting>();
+  @Output() selectedMeeting = new EventEmitter<number>();
 
   meetings: Meeting[];
   constructor(private meetingService: MeetingService) { }
@@ -35,9 +35,9 @@ export class ListMeetingComponent implements OnInit, DoCheck {
   }
   onLoadPage(page: string) {
     this.selectedPage.emit(page);
-    
   }
-  onEditList(i: number) {
-    this.selectedMeeting.emit(this.meetingService.getMeeting(i));
+  
+  onEditList(index: number) {
+    this.selectedMeeting.emit(index);
   }
 }
