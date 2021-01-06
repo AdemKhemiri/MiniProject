@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
   interval:any;
 
   @Input() meetIndex: number;
-  
+
   ngOnInit(): void {
     
   }

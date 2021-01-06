@@ -5,6 +5,7 @@ import { Meeting } from "./Meeting.model";
 export class MeetingService {
 
     selectedMeeting = new EventEmitter<Meeting>();
+
     private meetings : Meeting[];
 
     constructor () {
@@ -12,6 +13,16 @@ export class MeetingService {
             new Meeting(123,"Meeting 1", "Tones", new Date(), new Date()),
             new Meeting(123,"Meeting 2", "USA", new Date("12/1/2020"), new Date("3/31/2077"))
         ];
+        
+        if(window.localStorage.getItem('Meetings')) {
+            this.meetings = JSON.parse(window.localStorage.getItem('Meetings'));
+        }
+        else {
+            this.meetings = [];
+        }
+    }
+    saveInLocalStorage() {
+        window.localStorage.setItem('Meetings', JSON.stringify(this.meetings));
     }
     createMeeting(
         id:number, 
@@ -30,6 +41,7 @@ export class MeetingService {
     }
     addMeeting(meeting: Meeting) {
         this.meetings.push(meeting);
+        this.saveInLocalStorage();
     }
     editMeeting(i:number, meeting: Meeting) {
         this.meetings[i].id = meeting.id;
@@ -37,8 +49,10 @@ export class MeetingService {
         this.meetings[i].lieu = meeting.lieu;
         this.meetings[i].date_deb = meeting.date_deb;
         this.meetings[i].date_fin = meeting.date_fin;
+        this.saveInLocalStorage();
     }
     deleteMeeting(indice: number) {
         this.meetings.splice(indice ,1);
+        this.saveInLocalStorage();
     }
 }
