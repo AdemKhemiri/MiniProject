@@ -14,12 +14,12 @@ export class AppComponent implements OnInit{
   @Input() meetIndex: number;
 
   ngOnInit(): void {
-    
+
   }
-  
+
   onNavigate(page:string) {
-    
+
     this.loadedPage = page;
   }
-  
+
 }

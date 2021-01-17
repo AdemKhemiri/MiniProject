@@ -19,22 +19,30 @@ export class AddMeetingComponent implements OnInit {
   meet: Meeting;
   constructor(
     // private router:Router,
-    private meetingService: MeetingService    
+    private meetingService: MeetingService
     ) { }
 
   ngOnInit(): void {
-    
+
+  }
+  initInput(){
+    this.id.nativeElement.value = "";
+    this.titre.nativeElement.value = "";
+    this.lieu.nativeElement.value = "";
+    this.date_deb.nativeElement.value = "";
+    this.date_fin.nativeElement.value = "";
   }
   onLoadList() {
-    
+
 
     // console.log(this.id.nativeElement.value);
     this.meet = this.meetingService.createMeeting(
-      this.id.nativeElement.value, 
-      this.titre.nativeElement.value, 
-      this.lieu.nativeElement.value, 
-      new Date(), new Date()
+      this.id.nativeElement.value,
+      this.titre.nativeElement.value,
+      this.lieu.nativeElement.value,
+      new Date(this.date_deb.nativeElement.value), new Date(this.date_fin.nativeElement.value)
     );
     this.meetingService.addMeeting(this.meet);
+    this.initInput();
   }
 }
