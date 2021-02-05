@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Meeting } from './Model/Meeting.model';
+import { Component, inject, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -7,11 +7,13 @@ import { Meeting } from './Model/Meeting.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+
   title = 'MiniProject';
   loadedPage = '';
-  interval:any;
+
 
   @Input() meetIndex: number;
+
 
   ngOnInit(): void {
 

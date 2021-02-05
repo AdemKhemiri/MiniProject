@@ -1,7 +1,9 @@
 import { EventEmitter, Injectable } from "@angular/core";
 import { Meeting } from "./Meeting.model";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class MeetingService {
 
     selectedMeeting = new EventEmitter<Meeting>();

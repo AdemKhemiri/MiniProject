@@ -8,6 +8,7 @@ import { MeetingService } from './Model/MeetingService.service';
 import { DetailsMeetingComponent } from './details-meeting/details-meeting.component';
 import { AddMeetingComponent } from './add-meeting/add-meeting.component';
 import { EditMeetingComponent } from './edit-meeting/edit-meeting.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { EditMeetingComponent } from './edit-meeting/edit-meeting.component';
     BrowserModule,
     FormsModule,
   ],
-  providers: [MeetingService],
+
+  providers: [MeetingService, MatDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

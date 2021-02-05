@@ -11,13 +11,14 @@ export class DetailsMeetingComponent implements OnInit, DoCheck {
 
   selectedMeeting: Meeting;
   constructor(private meetingService: MeetingService) { }
-  
+
   ngDoCheck(): void {
     // try {
-      
+
     //   );
     // }
     // catch{ throw new Error('Method not implemented.'); }
+
   }
 
   ngOnInit(): void {

@@ -4,22 +4,26 @@
         class="row"
         *ngFor="let meet of meetings; let i=index" >
         <div class="col-md-6">
-            <div class="card" style="width: 100%;">
-                <img class="card-img-top" src="https://solutions.rent/wp-content/uploads/2019/07/spotkanie-biznesowe.jpg" alt="Card image cap" style="max-height:200px;">
-                <div class="card-body">
-                    <h5 class="card-title"> {{ meet.titre }} </h5>
+            <div class="card back" style="width: 457px">
+                <img class="card-img-top" src="../assets/Meet.jpg" alt="Card image cap" style="max-height:250px;">
+                <div class="card-body ">
+                    <h2 class="card-title"> {{ meet.titre }} </h2>
                     <p class="card-text">Lieu: {{ meet.lieu }} </p>
-                    <button
-                        class="btn btn-success m"
-                        (click)="onShowDetails(i)"
-                    >Details</button>
-                    <button
-                        class="btn btn-primary m"
-                        (click)="onLoadPage('edit'); onEditList(i)">Editer</button>
-                    <button
-                        class="btn btn-danger m"
-                        (click)="onDeleteMeeting(i)"
-                    >Supprimer</button>
+
+                    <!-- Buttons -->
+                    <div class="m">
+                      <button
+                      class="btn btn-success btm"
+                      (click)="onShowDetails(i)"
+                      >Details</button>
+                      <button
+                      class="btn btn-primary btm"
+                      (click)="onLoadPage('edit'); onEditList(i)">Editer</button>
+                      <button
+                      class="btn btn-danger btm"
+                      (click)="onDeleteMeeting(i)"
+                      >Supprimer</button>
+                    </div>
                 </div>
             </div>
             <hr>
@@ -27,13 +31,13 @@
 
     </div>
 
-    <div class="row">
+<!-- <div class="row">
         <div class="col-md-12">
             <button
                 type="button"
-                class="btn btn-primary"
+                class="btn btn-primary"             // shit HAPPENS BUDDY
                 (click)="onLoadPage('add')"
                 >Ajouter un reunion</button>
         </div>
-    </div>
+      </div> -->
 </div>

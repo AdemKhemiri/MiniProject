@@ -1,17 +1,25 @@
 
-<div class="container">
+<div class="container back">
   <div class="row">
     <div class="col-md-12">
+      <div class="col-md-12">
+        <button
+            *ngIf="loadedPage !== 'add'"
+            type="button"
+            class="btn btn-primary m" mat-button
+            (click)="onNavigate('add')"
+            >Ajouter un reunion</button>
+    </div>
       <app-add-meeting *ngIf="loadedPage === 'add'" ></app-add-meeting>
-      
+
       <app-edit-meeting *ngIf="loadedPage === 'edit'"  [meetingIndex]="meetIndex"></app-edit-meeting>
-      
+
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <app-list-meeting 
-        (selectedPage)="onNavigate($event)" 
+      <app-list-meeting
+        (selectedPage)="onNavigate($event)"
         (selectedMeeting)="meetIndex = $event"
       ></app-list-meeting>
     </div>

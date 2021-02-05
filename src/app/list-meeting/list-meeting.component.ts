@@ -16,13 +16,13 @@ export class ListMeetingComponent implements OnInit, DoCheck {
   meetings: Meeting[];
   constructor(private meetingService: MeetingService) { }
 
-  
+
   ngDoCheck(): void {
     this.meetings = this.meetingService.getMeetings();
   }
   ngOnInit(): void {
 
-    
+
   }
   onShowDetails(i:number) {
 
@@ -36,7 +36,7 @@ export class ListMeetingComponent implements OnInit, DoCheck {
   onLoadPage(page: string) {
     this.selectedPage.emit(page);
   }
-  
+
   onEditList(index: number) {
     this.selectedMeeting.emit(index);
   }
