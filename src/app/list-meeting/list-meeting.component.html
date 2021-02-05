@@ -1,6 +1,6 @@
 <div class="constainer">
     <hr>
-    <div 
+    <div
         class="row"
         *ngFor="let meet of meetings; let i=index" >
         <div class="col-md-6">
@@ -9,28 +9,28 @@
                 <div class="card-body">
                     <h5 class="card-title"> {{ meet.titre }} </h5>
                     <p class="card-text">Lieu: {{ meet.lieu }} </p>
-                    <button 
+                    <button
                         class="btn btn-success m"
                         (click)="onShowDetails(i)"
                     >Details</button>
-                    <button 
+                    <button
                         class="btn btn-primary m"
                         (click)="onLoadPage('edit'); onEditList(i)">Editer</button>
-                    <button 
+                    <button
                         class="btn btn-danger m"
-                        (click)="onDeleteMeeting(i)"    
+                        (click)="onDeleteMeeting(i)"
                     >Supprimer</button>
                 </div>
             </div>
             <hr>
         </div>
-       
+
     </div>
-    
+
     <div class="row">
         <div class="col-md-12">
-            <button 
-                type="button" 
+            <button
+                type="button"
                 class="btn btn-primary"
                 (click)="onLoadPage('add')"
                 >Ajouter un reunion</button>

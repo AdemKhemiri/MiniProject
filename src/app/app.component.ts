@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
 
   }
 
+
   onNavigate(page:string) {
 
     this.loadedPage = page;

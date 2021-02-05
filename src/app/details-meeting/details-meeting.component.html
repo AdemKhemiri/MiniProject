@@ -18,12 +18,12 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <h4>Date du debut: {{ selectedMeeting?.date_deb }} </h4>
+            <h4>Date du debut: {{ selectedMeeting?.date_deb | date :'short' }} </h4>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <h4>Date du fin: {{ selectedMeeting?.date_fin }} </h4>
+            <h4>Date du fin: {{ selectedMeeting?.date_fin | date :'short' }} </h4>
         </div>
     </div>
 </div>
